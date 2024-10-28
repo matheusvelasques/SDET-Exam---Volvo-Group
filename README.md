@@ -11,6 +11,10 @@ URL: https://www.saucedemo.com/ Test Scenario:
 4. At the cart page, check out the item. 
 5. Finish the checkout process
 
+
+![FluxogramaFrontEnd](https://github.com/user-attachments/assets/c2665b9b-455c-4a2f-a1ac-717a917184ed)
+
+
 Results:
 ![image](https://github.com/user-attachments/assets/182e4e7c-63d6-4f31-a396-7574f341d906)
 
@@ -33,4 +37,4 @@ Results:
 ![image](https://github.com/user-attachments/assets/7a46dd0e-9215-4309-8681-8118ea7f762c)
 
 
-![FluxogramaFrontEnd](https://github.com/user-attachments/assets/c2665b9b-455c-4a2f-a1ac-717a917184ed)
+
