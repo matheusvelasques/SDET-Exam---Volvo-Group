@@ -16,6 +16,7 @@ URL: https://www.saucedemo.com/ Test Scenario:
 
 
 Results:
+
 ![image](https://github.com/user-attachments/assets/182e4e7c-63d6-4f31-a396-7574f341d906)
 
 ![image](https://github.com/user-attachments/assets/2cbbc566-c8ed-44a2-908b-5e38be132a2b)
