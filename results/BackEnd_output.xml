@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20241028 16:02:10.111" rpa="false" schemaversion="4">
+<suite id="s1" name="AutomationExemplos" source="C:\Git\AutomationExemplos">
+<suite id="s1-s1" name="SDET Exam" source="C:\Git\AutomationExemplos\SDET_Exam">
+<suite id="s1-s1-s1" name="ApiTest" source="C:\Git\AutomationExemplos\SDET_Exam\ApiTest.robot">
+<test id="s1-s1-s1-t1" name="Verificar get" line="16">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${host}</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20241028 16:02:10.475" level="INFO">Creating Session using : alias=mysession, url=https://fakerestapi.azurewebsites.net, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20241028 16:02:10.474" endtime="20241028 16:02:10.475"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>${get_all}/${request_id}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20241028 16:02:11.619" level="INFO">GET Request : url=https://fakerestapi.azurewebsites.net/api/v1/Activities/2 
+ path_url=/api/v1/Activities/2 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20241028 16:02:11.620" level="INFO">GET Response : url=https://fakerestapi.azurewebsites.net/api/v1/Activities/2 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json; charset=utf-8; v=1.0', 'Date': 'Mon, 28 Oct 2024 19:02:10 GMT', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked', 'api-supported-versions': '1.0'} 
+ body={"id":2,"title":"Activity 2","dueDate":"2024-10-28T21:02:11.265764+00:00","completed":true} 
+ </msg>
+<msg timestamp="20241028 16:02:11.620" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20241028 16:02:10.476" endtime="20241028 16:02:11.620"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20241028 16:02:11.621" endtime="20241028 16:02:11.622"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${body}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20241028 16:02:11.622" level="INFO">${body} = {"id":2,"title":"Activity 2","dueDate":"2024-10-28T21:02:11.265764+00:00","completed":true}</msg>
+<status status="PASS" starttime="20241028 16:02:11.622" endtime="20241028 16:02:11.623"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${body}</arg>
+<arg>id</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20241028 16:02:11.623" endtime="20241028 16:02:11.623"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${body}</arg>
+<arg>"id":${request_id}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20241028 16:02:11.624" endtime="20241028 16:02:11.624"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20241028 16:02:11.624" endtime="20241028 16:02:11.625"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20241028 16:02:11.625" endtime="20241028 16:02:11.626"/>
+</kw>
+<doc>Enviar uma requisição get e verificar o response se contem resposta no id</doc>
+<tag>BackEnd</tag>
+<status status="PASS" starttime="20241028 16:02:10.473" endtime="20241028 16:02:11.626"/>
+</test>
+<doc>Teste de back-end</doc>
+<status status="PASS" starttime="20241028 16:02:10.136" endtime="20241028 16:02:11.628"/>
+</suite>
+<status status="PASS" starttime="20241028 16:02:10.133" endtime="20241028 16:02:11.629"/>
+</suite>
+<status status="PASS" starttime="20241028 16:02:10.115" endtime="20241028 16:02:11.630"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">BackEnd</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="AutomationExemplos">AutomationExemplos</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="SDET Exam">AutomationExemplos.SDET Exam</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="ApiTest">AutomationExemplos.SDET Exam.ApiTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
