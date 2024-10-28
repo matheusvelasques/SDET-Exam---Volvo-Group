@@ -38,4 +38,16 @@ Results:
 ![image](https://github.com/user-attachments/assets/7a46dd0e-9215-4309-8681-8118ea7f762c)
 
 
+Observação:
+Python version: 3.11.4 
 
+Libraries FrontEnd:
+- Library               Selenium2Library
+- Resource              keywords.robot
+
+Libraries: BackEnd:
+
+- Library     Selenium2Library
+- Library     RequestsLibrary
+- Library     Collections
+- Library     JSONLibrary
